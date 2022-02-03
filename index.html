@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>IQ180</title>
+	<link rel="icon" type="image/png" href="icon.png"/>
+	<link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+	<script src="sketch.js"></script>
+
+	<style>
+		*{
+			font-family: 'Kanit', sans-serif;
+			text-align: center;
+		}
+		div{
+			display:block;
+			margin:auto;
+			width:auto;
+		}
+		input{
+			text-align:center;
+			margin:auto;
+			font-size: 24px;
+		}
+		h1,p,label{
+			margin:auto;
+			color:white;
+		}
+		button{
+			border-style: none;
+			border-radius: 10px;
+			outline: none;
+			transition-duration: 250ms;
+		}
+		button:active{
+			filter:brightness(75%);
+			transition-duration: 250ms;
+		}
+		#bs{
+			background-color: #88ff88;
+		}
+		#cl{
+			background-color: #ffff88;
+		}
+		#av{
+			background-color: #ff8888;
+		}
+		#dis{
+			font-size: 24px;
+		}
+	</style>
+
+</head>
+
+<body style="background-color: #222;">
+	<div style="width: 370px;">
+		<br><h1 style="color:orange">IQ 180 Number Game</h1><br>
+		<p>The goal is to use digits below and combine with basic mathematics operations ( + , - , * , / ) to get the target number<br>For example 2 3 4 2, 24 => 3*(4+2+2)=24</p><br>
+	</div>
+	<div>
+		<p>Rules : allow</p>
+		<input type="checkbox" id="rcb" onclick="rules(this)"><label for="rcb"> root(√)</label>
+		<input type="checkbox" id="pwcb" onclick="rules(this)"><label for="pwcb"> power(^)&nbsp;</label>
+		<input type="checkbox" id="ftrcb" onclick="rules(this)"><label for="ftrcb"> factorial(!)</label>
+	</div><br>
+	<div style="width: 360px;">
+		<input maxlength="1" id="num1" size="1">
+		<input maxlength="1" id="num2" size="1">
+		<input maxlength="1" id="num3" size="1">
+		<input maxlength="1" id="num4" size="1">
+		<input maxlength="1" id="num5" size="1">
+		<input maxlength="1" id="num6" size="1">
+	</div><br>
+	<div>
+		<p>Target number</p>
+		<input maxlength="3" id="target" size="12" placeholder="Integer (0-999)"><br><br>
+	</div>
+	<div>
+		<button onclick="checkproblem(true)">Find a solution</button>
+		<button onclick="clr()">Clear</button><br><br>
+		<p id="dis">&nbsp;</p><br>
+	</div>
+	<div>
+		<p>Generate a question</p>
+		<button id="bs" onclick="randomq(4,24,24)"><b>Basic</b><br>4 numbers<br>Target : 24</button>
+		<button id="cl" onclick="randomq(5,25,100)"><b>Challenging</b><br>5 numbers<br>Target : 25-99</button>
+		<button id="av" onclick="randomq(6,100,999)"><b>Advanced</b><br>6 numbers<br>Target : 100-999</button>
+	</div>
+</body>
+</html>
