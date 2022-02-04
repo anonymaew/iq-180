@@ -1,0 +1,17 @@
+$primaryColor: #0d1117;
+$secondaryColor: #c9d1d9;
+
+.page {
+  color: $secondaryColor;
+  background-color: $primaryColor;
+  padding: 24px;
+  height: 100vh;
+  text-align: center;
+  > div {
+    max-width: 480px;
+    margin: 0 auto;
+    > div {
+      margin-top: 60px;
+    }
+  }
+}
