@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import s from "./iq180.module.scss";
 
-const iq180 = () => {
+const IQ180 = () => {
   const [rulesWindow, setRulesWindow] = useState<Array<boolean>>([
     false,
     false,
@@ -317,4 +317,4 @@ const iq180 = () => {
   );
 };
 
-export default iq180;
+export default IQ180;
